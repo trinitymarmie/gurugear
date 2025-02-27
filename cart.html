@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="cart.js"></script>
+</head>
+<body>
+    <header class="shop-header">
+        <ul>
+            <li><a href="index.html"><strong>Home</strong></a></li>
+            <li><a href="aboutus.html"><strong>About Us</strong></a></li>
+            <li><a href="shop.html"><strong>Shop</strong></a></li>
+            <li><a href="contactus.html"><strong>Contact Us</strong></a></li>
+            <a href="cart.html" style="font-size: 1.5em;">🛒 (<span id="cart-count">0</span>)</a>
+        </ul>
+    </header>
+    
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <div class="cart-total">
+            <h3>Total: $<span id="cart-total">0.00</span></h3>
+        </div>
+        <button id="checkout-button">Checkout</button>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Guru Gear. All Rights Reserved.</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
+
+
