@@ -1,38 +1,44 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const addToCartButtons = document.querySelectorAll(".product button");
-    const cartCount = document.getElementById("cart-count");
+document.addEventListener('DOMContentLoaded', function () {
+  const addToCartButtons = document.querySelectorAll('.product button');
+  const cartCount = document.getElementById('cart-count');
 
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  // Load existing cart from localStorage or empty if none
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Function to add item to cart
-    function addToCart(event) {
-        const productElement = event.target.closest(".product");
-        const productName = productElement.querySelector("h3").innerText;
-        const productPrice = parseFloat(productElement.querySelector("p").innerText.replace("$", ""));
-        const productImage = productElement.querySelector("img").src;
+  // Update the cart count display on page load
+  if (cartCount) {
+    cartCount.textContent = cart.length;
+  }
 
-        // Create an object for the product
-        const product = { name: productName, price: productPrice, image: productImage };
+  // Function to handle Add to Cart
+  function addToCart(event) {
+    const productElement = event.target.closest('.product');
+    const productName = productElement.querySelector('h3').innerText;
+    const productPrice = parseFloat(productElement.querySelector('p').innerText.replace('$', ''));
+    const productImage = productElement.querySelector('img').src;
 
-        // Add to cart array
-        cart.push(product);
+    // Create an object for the product
+    const product = {
+      name: productName,
+      price: productPrice,
+      image: productImage,
+    };
 
-        // Save to localStorage
-        localStorage.setItem("cart", JSON.stringify(cart));
+    // Add to cart array
+    cart.push(product);
+    // Save to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-        // Update cart count display
-        cartCount.textContent = cart.length;
-
-        alert(`${productName} added to cart!`);
+    // Update cart count
+    if (cartCount) {
+      cartCount.textContent = cart.length;
     }
 
-    // Attach event listeners to all "Add to Cart" buttons
-    addToCartButtons.forEach(button => {
-        button.addEventListener("click", addToCart);
-    });
+    alert(`${productName} added to cart!`);
+  }
 
-    // Update the cart count on page load
-    cartCount.textContent = cart.length;
+  // Attach event listeners
+  addToCartButtons.forEach((button) => {
+    button.addEventListener('click', addToCart);
+  });
 });
-
-
