@@ -275,11 +275,10 @@ ul.navmenu li a:hover {
   padding: 20px;
   background-color: #ffffff;
   justify-items: center; /* <--- new */
-  align-items: start;    /* or center */
-  margin: 0 auto;        /* optional for fully centering the grid */
-  max-width: 1200px;     /* optional to stop it from stretching too wide */
+  align-items: start; /* or center */
+  margin: 0 auto; /* optional for fully centering the grid */
+  max-width: 1200px; /* optional to stop it from stretching too wide */
 }
-
 
 /* Each product card */
 .product {
