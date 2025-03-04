@@ -1,132 +1,219 @@
-/* Header - Navigation Bar */
+/* ------------------ Global Resets/Body ------------------ */
+body {
+  margin: 0;
+  font-family: 'acme-gothic', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ------------------ Header / Hamburger Menu ------------------ */
 header {
-  background-color: rgba(127, 196, 178, 0.5); 
+  background-color: #c8e6e5;
   width: 100%;
-  z-index: 100;
-  font-family: "acme-gothic", sans-serif;
+  z-index: 9999;
+  padding: 10px 0;
 }
 
-.navmenu {
+/* The navbar container holds the checkbox + hamburger + ul */
+.navbar {
   display: flex;
-  justify-content: flex-start;
-  padding: 10px 5px;
-  margin: 0;
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-}
-
-header ul {
-  display: flex;
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* The hidden checkbox to toggle nav on mobile */
+#menu-toggle {
+  display: none;
+}
+
+/* The hamburger icon label (3 bars) */
+.hamburger {
+  display: none; /* Show only on smaller screens in media query */
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* The nav UL */
+ul.navmenu {
+  display: flex;
+  flex-wrap: nowrap;
   list-style: none;
-  padding: 0;
+  z-index: 9999;
   margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
-header ul li {
-  margin: 0 59px;
+ul.navmenu li {
+  margin: 0 20px;
 }
 
-header ul li a {
+ul.navmenu li a {
   color: #7170b4;
   text-decoration: none;
-  display: block;
-  transition: background-color 0.3s;
   letter-spacing: 2px;
   word-spacing: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-header ul li a:hover {
+ul.navmenu li a:hover {
   background-color: #fff;
 }
 
-
+/* The logo in the nav */
 .logonotext {
-  width: 100px;
-  height: 75px;
-  margin-left: -30px;
+  width: 80px;
+  height: auto;
+  margin-left: 0;
+}
+
+/* Mobile media query: show hamburger, hide normal menu at first */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin-right: 10px;
+  }
+
+  /* Hide the nav items by default on small screens */
+  ul.navmenu {
+    display: none;
+    flex-direction: column;
+    background-color: #c8e6e5;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  /* Show nav items when #menu-toggle is checked */
+  #menu-toggle:checked ~ ul.navmenu {
+    display: flex;
+  }
+
+  /* Vertical spacing for each link on mobile */
+  ul.navmenu li {
+    margin: 10px 0;
+  }
+}
+
+/* Optional: heading used on some pages (like "Reviews" or "Contact Us") */
+.shop-header h1,
+.page-title {
+  text-align: center;
+  color: #7170b4;
+  margin: 20px 0;
+}
+
+/* ------------------ Homepage: Hero (Top) Section ------------------ */
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 20px;
+  position: relative;
+}
+
+.hero-left {
+  position: relative;
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.palmtree {
+  opacity: 0.4;
+  width: 100%;
+  max-width: 550px;
+  height: auto;
 }
 
 .logo {
-  position: absolute; 
-  top: 15%; 
-  right: 35%; 
+  position: absolute;
+  top: 20%;
+  left: 50%;
   transform: translateX(-50%);
-  width:3.6894 in;
-  height:3.4621 in;
-}
-.leftbox {
-  display: inline-block;  
-  vertical-align: top;    
-  margin-right: 10px;     
+  width: 300px;
+  height: auto;
 }
 
-.box-container {
-  position: relative;  
+.hero-right {
+  flex: 1 1 40%;
+  background-color: #7170b4;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
 }
 
-.purplebox {
-  display: inline-block; 
-  vertical-align: top;    
-  background-color: #7170b4; 
-  width: 200px;          
-  height: 100px;
-  position: relative;     /* Ensure it's positioned properly */
-  z-index: 10;            /* Bring it to the front */        /* Prevent overflow */
+.hero-right h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-
-.plamtree {
-  opacity: 0.4;
-  margin-right: 640px;
-  width: 5.5in;  
-  height: 5in; 
-  margin-top: 30px;
+.model-images {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.shop-btn{
+.model-images img {
+  width: 100px;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Shop Now Button in Purple Box */
+.shop-btn {
   padding: 10px 20px;
   background-color: #eeedf5;
   border-radius: 4px;
   text-decoration: none;
   color: #7170b4;
-  font-family: Acme Gothic;
+  font-family: 'acme-gothic', sans-serif;
   font-weight: bold;
-  font-size: 0.2in ;
-  margin-bottom: -100px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+.shop-btn:hover {
+  background-color: #e0dff0;
 }
 
-/* The text at the bottom of the home page */
+/* ------------------ Homepage - Welcome Section & Leaves ------------------ */
 .home-welcome {
-  display: flex;              /* Use flexbox for layout */
-  flex-direction: row;        /* Align items in a row */
-  justify-content: space-between; /* Space items evenly */
-  align-items: center;        /* Vertically center items */
-  padding: 20px;              /* Add padding around the container */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
 }
 
-/* Text Bottom Homepage */
 .hero {
   text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  flex: 1;
 }
 
 .leafleft {
-  margin-right: 20px; 
-  width: 100px; 
-  margin-top: 42px;       
+  margin-right: 20px;
+  width: 100px;
+  margin-top: 42px;
 }
-
 .leafright {
   margin-left: 20px;
-  width: 100px; 
-  margin-top: 42px; 
-}  
-
-.hero{
-  margin-top: 130px;
-  margin-bottom: 20px;
+  width: 100px;
+  margin-top: 42px;
 }
 
 .homepage-line {
@@ -136,21 +223,16 @@ header ul li a:hover {
   border: 1px solid #7170b4;
 }
 
+/* ------------------ Footer ------------------ */
 .footer {
-  padding: 20px;
+  background-color: rgba(127, 196, 178, 0.5);
+  color: black;
   text-align: center;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-
-
-/* About Section */
-body {
-  margin: 0;
-  font-family: "acme-gothic", sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-}
-
+/* ------------------ About Section ------------------ */
 .about-section {
   background-color: #fff;
   padding: 60px 20px;
@@ -158,164 +240,134 @@ body {
   width: 80%;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Centering all content */
-
+  text-align: center;
 }
-
-/* "About Us" Title */
 .about-section h1 {
-  font-size: 42px; /* Bigger font size */
+  font-size: 42px;
   font-weight: bold;
   color: #7170b4;
-  margin-bottom: 50px; /* Spacing between title and text */
- 
+  margin-bottom: 50px;
 }
-
-/* About Section Paragraphs */
 .about-section p {
   font-size: 20px;
   line-height: 1.6;
-  text-align: center; /* Centers text */
   margin-bottom: 20px;
 }
-
-.about-line { 
+.about-line {
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: none; /* Remove default border */
-  height: 4px; /* Adjust thickness to make it 'bold' */
-  background-color: #7170b4; /* Ensures color is applied */
+  margin: 20px 0;
+  border: none;
+  height: 4px;
+  background-color: #7170b4;
 }
 
-.about-leaf{
-display: flex;
- justify-content: center;
- align-items: center;
- margin-bottom: 70px;
-}
-
-/* Footer */
-.footer {
-  background-color: rgba(127, 196, 178, 0.5);
-  color: black;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-
-
-/* Shop page */
-
-/* Products */
-
-.shoppingbanner{
+/* ------------------ Shop Page Banner ------------------ */
+.shoppingbanner {
   display: flex;
   justify-content: center;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-.shop-header ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style-type: none;
-  padding: 10px;
-  background-color: rgba(127, 196, 178, 0.10);
-  margin: 0;
-}
-.shop-headerder ul li {
-  margin: 0 20px;
-}
-.shop-header ul li a {
-  color: #7170b4;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-}
+/* ------------------ Shop Page: Product Grid ------------------ */
 .shop-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
   padding: 20px;
+  background-color: #ffffff;
 }
+
+/* Each product card */
 .product {
   background-color: #fff;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .product img {
   width: 100%;
   height: auto;
   margin-bottom: 10px;
-  order: -1; /* Ensure image stays at the top */
+  border-radius: 4px;
 }
-.product h3, .product p {
+
+.product h3,
+.product p {
   margin: 5px 0;
-  order: 2; /* Place text below the image */
 }
-button {
+
+.product button {
   padding: 10px 15px;
   background-color: #7170b4;
   color: #fff;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
-button:hover {
-  background-color: #0056b3;
+.product button:hover {
+  background-color: #5c5bad;
 }
-.footer {
-  padding: 20px;
+
+/* ------------------ Contact Page Styles ------------------ */
+.contact-info,
+.contact-form {
   text-align: center;
-  background-color: rgba(127, 196, 178, 0.5); 
-  color: black;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
-
-
-/* Cart Page */
-/* Cart Page Styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
+.contact-info ul {
+  list-style: none;
   padding: 0;
-}
-
-.shop-header ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style-type: none;
-  padding: 10px;
-  background-color: rgba(127, 196, 178, 0.10);
   margin: 0;
 }
 
-.shop-header ul li {
-  margin: 0 20px;
+.contact-info li {
+  margin: 10px 0;
 }
 
-.shop-header ul li a {
-  color: #7170b4;
-  text-decoration: none;
+label {
+  display: block;
+  margin-top: 20px;
   font-weight: bold;
-  font-size: 18px;
 }
 
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: 'acme-gothic', sans-serif;
+  font-size: 16px;
+}
+
+button[type='submit'] {
+  display: inline-block;
+  background-color: #7170b4;
+  color: #fff;
+  padding: 10px 30px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button[type='submit']:hover {
+  background-color: #5c5bad;
+}
+
+/* ------------------ Cart Page Styles ------------------ */
 .cart-container {
   width: 80%;
   margin: 50px auto;
@@ -326,127 +378,33 @@ body {
 }
 
 #cart-items {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 20px 0;
 }
 
 .cart-item {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 10px;
   border-bottom: 1px solid #ddd;
+  padding: 10px 0;
 }
 
 .cart-item img {
   width: 80px;
   height: auto;
-  margin-right: 15px;
+  margin-right: 20px;
+  border-radius: 4px;
 }
 
-.cart-total {
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-#checkout-button {
-  padding: 10px 20px;
+.cart-item button {
   background-color: #7170b4;
-  color: white;
+  color: #fff;
+  padding: 6px 12px;
   border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
-#checkout-button:hover {
-  background-color: #0056b3;
-}
-
-.footer {
-  padding: 20px;
-  text-align: center;
-  background-color: rgba(127, 196, 178, 0.5);
-  color: black;
-}
-
-
-/* Contact Page */
-
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f8f8f8;
-  color: black;
-  ;
-}
-
-/* Header */
-.shop-header {
-  background-color: #7170b4;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin: 10px 0;
-}
-
-/* Main Content */
-main {
-  max-width: 600px;
-  margin: 60px auto;
-  padding: 20px;
-  background-color: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-/* Contact Info */
-.contact-info {
-  text-align: center;
-}
-
-.contact-info ul {
-  list-style: none;
-  padding: 0;
-}
-
-.contact-info li {
-  margin: 10px 0;
-}
-
-/* Contact Form */
-.contact-form {
-  margin-top: 20px;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 15px;
-  color: white;
-  border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #555;
+.cart-item button:hover {
+  background-color: #5c5bad;
 }
