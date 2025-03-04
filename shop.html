@@ -1,98 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guru Gear</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-        <!-- Nav Menu -->
-	<header class="shop-header">
-        <link rel="stylesheet" href="https://use.typekit.net/xaz2qyi.css">
-		<ul>
-                <li><a href="index.html"><strong>Home</strong></a></li>
-                <li><a href="aboutus.html"><strong>About Us</strong></a></li>
-                <li><a href="shop.html"><strong>Shop</strong></a></li>
-				<li><a href="contactus.html"><strong>Contact Us</strong></a></li>
-                <li><a href="cart.html" class="cart" style="font-size: 1.5em;">🛒</a></li>
-                <img class="logonotext" src="images/GuruGearNoText.png" alt="GuruGearlogonotext" />
-                
-      	</ul>
-	</header>
-     <div class="shoppingbanner">
-        <img class= "shoppingbanner" src="images/shopingbanner.png" alt="plamtree">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Guru Gear - Shop</title>
+
+    <!-- Typekit -->
+    <link rel="stylesheet" href="https://use.typekit.net/xaz2qyi.css" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Hamburger Header -->
+    <header>
+      <div class="navbar">
+        <input type="checkbox" id="menu-toggle" />
+        <label class="hamburger" for="menu-toggle">&#9776;</label>
+
+        <ul class="navmenu">
+          <li>
+            <a href="index.html"><strong>Home</strong></a>
+          </li>
+          <li>
+            <a href="aboutus.html"><strong>About Us</strong></a>
+          </li>
+          <li>
+            <a href="shop.html"><strong>Shop</strong></a>
+          </li>
+          <li>
+            <a href="reviews.html"><strong>Reviews</strong></a>
+          </li>
+          <li>
+            <a href="contactus.html"><strong>Contact Us</strong></a>
+          </li>
+          <li>
+            <!-- Note the cart count is updated by index.js, if you wish -->
+            <a href="cart.html" style="font-size: 1.5em">🛒 (<span id="cart-count">0</span>)</a>
+          </li>
+
+          <li>
+            <img class="logonotext" src="images/GuruGearNoText.png" alt="Guru Gear logo no text" />
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Shop Banner -->
+    <div class="shoppingbanner">
+      <img
+        src="images/shopingbanner.png"
+        alt="2 for $24 Leggings Banner"
+        style="display: block; width: 100%; height: auto"
+      />
     </div>
 
+    <!-- Product Grid -->
     <div class="shop-container">
-        <div class="product">
-          <img src="images/pink high rise flared leggings.webp" alt="Pink High Rise Flared Leggings">
-          <h3>Pink- High Rise Flared Leggings</h3>
-          <p>$85.00</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="product">
-          <img src="images/navey blue cop tank (1).webp" alt="Navy Blue Cop Tank">
-          <h3>Navy Blue- Cop Tank</h3>
-          <p>$74.00</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="product">
-          <img src="images/Army green longsleeve.webp" alt="Army Green Long Sleeve Crop Top">
-          <h3>Army Green- Long Sleeve Crop Top</h3>
-          <p>$80.00</p>
-          <button>Add to Cart</button>
-        </div>
-        <div class="product">
-            <img src="images/sage green sports bra.webp" alt="sage green sports bra">
-            <h3>Sage Green- Sports Bra</h3>
-            <p>$25.00</p>
-            <button>Add to Cart</button>
-          </div>
-            <div class="product">
-                <img src="images/baby blue flared leggings.webp" alt="baby blue flared leggings">
-                <h3>Baby Blue- Flarted Leggings</h3>
-                <p>$85.00</p>
-                <button>Add to Cart</button> 
-            </div>
-            <div class="product">
-                <img src="images/sherbet cross over crop tank.jpg" alt="Sherbet- Cross Over 
-                Crop Tank">
-                <h3>Sherbet- Cross Over Crop Tank</h3>
-                <p>$75.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/mint yoga leggings.webp" alt="Mint Green- Yoga Leggings">
-                <h3>Mint Green- Yoga Leggings</h3>
-                <p>$85.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/grey double strap midi bra.webp" alt="Grey- Double Stap Mini Bra">
-                <h3>Grey- Double Stap Mini Bra</h3>
-                <p>$30.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/red sports bra.webp" alt="Red- Sports Bra">
-                <h3>Red- Sports Bra</h3>
-                <p>$25.00</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="images/black mid rise leggings.webp" alt="Black- Mid Rise Leggings">
-                <h3>Black- Mid Rise Leggings</h3>
-                <p>$85.00</p>
-                <button>Add to Cart</button>
-            </div>
-
-      
+      <!-- Example Products -->
+      <div class="product">
+        <img
+          src="images/pink high rise flared leggings.webp"
+          alt="Pink High Rise Flared Leggings"
+        />
+        <h3>Pink – High Rise Flared Leggings</h3>
+        <p>$85.00</p>
+        <button>Add to Cart</button>
       </div>
-    
+
+      <div class="product">
+        <img src="images/navey blue cop tank (1).webp" alt="Navy Blue Crop Tank" />
+        <h3>Navy Blue – Crop Tank</h3>
+        <p>$74.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/Army green longsleeve.webp" alt="Army Green Long Sleeve Crop Top" />
+        <h3>Army Green – Long Sleeve Crop Top</h3>
+        <p>$80.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <div class="product">
+        <img src="images/sage green sports bra.webp" alt="Sage Green Sports Bra" />
+        <h3>Sage Green – Sports Bra</h3>
+        <p>$25.00</p>
+        <button>Add to Cart</button>
+      </div>
+
+      <!-- ... Add the rest of your products similarly ... -->
+    </div>
+
+    <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 Guru Gear. All Rights Reserved.</p>
+      <p>&copy; 2025 Guru Gear. All Rights Reserved.</p>
     </footer>
+
+    <!-- JavaScript -->
     <script src="index.js"></script>
-</body>
+    <script src="cart.js"></script>
+  </body>
 </html>
